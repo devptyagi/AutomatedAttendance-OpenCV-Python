@@ -100,7 +100,7 @@ def facerecog():
                             daytime = "Afternoon"
                         else:
                             daytime = "Evening"
-                        strTime = strTime = strTime + ' ' + daytime
+                        strTime = strTime + ' ' + daytime
                         writer = csv.writer(csvFile)
                         writer.writerow([id,name,status,strTime])
                     csvFile.close()
