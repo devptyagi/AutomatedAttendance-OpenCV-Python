@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import cv2
 import sys
 import csv
@@ -91,8 +93,16 @@ def facerecog():
                             alreadyMarked=0
                     print("Already Marked? : "+ str(alreadyMarked))
                     if(alreadyMarked==0):
+                        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+                        if hour >= 0 and hour < 12:
+                            daytime = "Morning"
+                        elif hour >= 12 and hour < 18:
+                            daytime = "Afternoon"
+                        else:
+                            daytime = "Evening"
+                        strTime = strTime = strTime + ' ' + daytime
                         writer = csv.writer(csvFile)
-                        writer.writerow([id,name,status])
+                        writer.writerow([id,name,status,strTime])
                     csvFile.close()
 
                 if(alreadyMarked == 0):
