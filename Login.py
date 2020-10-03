@@ -93,7 +93,8 @@ def facerecog():
                             alreadyMarked=0
                     print("Already Marked? : "+ str(alreadyMarked))
                     if(alreadyMarked==0):
-                        strTime = datetime.datetime.now().strftime("%H:%M:%S")
+                        strTime = datetime.now().strftime("%H:%M:%S")
+                        hour = int(datetime.now().hour)
                         if hour >= 0 and hour < 12:
                             daytime = "Morning"
                         elif hour >= 12 and hour < 18:
